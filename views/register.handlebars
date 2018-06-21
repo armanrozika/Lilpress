@@ -1,0 +1,21 @@
+<body id="newpost-page-body">
+   {{{messages}}}
+   {{#if errors}}
+      {{#each errors}}
+         {{msg}}
+      {{/each}}
+   {{/if}}
+
+      <div class="new-post-wrapper">
+         <form id="post-article" name="compForm" action="/user/register" method="POST">
+            <input id="title" type="text" name="name" value="" placeholder="Name"><br>
+            <input id="title" type="text" name="email" value="" placeholder="Email"><br>
+            <input id="title" type="text" name="username" value="" placeholder="Username"><br>
+            <input id="title" type="password" name="password" value="" placeholder="Password"><br>
+            <input id="title" type="password" name="password2" value="" placeholder="Confirm Password"><br>
+            <button id="post-submit">Register</button>
+         </form>
+      </div>
+
+      <!-- <script src="/main.js"></script> -->
+   </body>

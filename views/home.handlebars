@@ -1,0 +1,24 @@
+<body id="dashboard-page-index">
+      <div class="post-section">
+         <div class="published-post-wrapper">
+            <div id="menu">
+               <a href="#" class="active"><h3>Home</h3></a>
+               <a href="#"><h3>WebDev</h3></a>
+               <a href="#"><h3>Opinion</h3></a>
+               <a href="#"><h3>Art</h3></a>
+               <input type="text" name="" value="" placeholder="Search">
+            </div>
+            <div class="published-post">
+               {{#each articles}}
+                  <div class="articles">
+                     <img src="/img/{{files.0.filename}}" alt="">
+                     <a href="/article/{{title}}"> <h2>{{title}} <span>{{date}}</span> <span id="span-tag">{{category}}</span>  </h2> </a>
+                  </div>
+               {{/each}}
+
+
+            </div>
+         </div>
+      </div>
+
+   </body>

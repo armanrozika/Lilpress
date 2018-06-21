@@ -1,0 +1,17 @@
+<body id="login-page-body">
+   {{{messages}}}
+   {{#if errors}}
+      {{#each errors}}
+         {{msg}}
+      {{/each}}
+   {{/if}}
+
+     <h1>Login Page</h1>
+     <div class="login-main-wrapper">
+        <form action="/user/login" id="login-form" name="login" method="POST">
+           <input type="text" name="username" placeholder="Username">
+           <input type="password" name="password" placeholder="Password"><br>
+           <button type="submit" placeholder="Login">Login</button>
+        </form>
+     </div>
+</body>

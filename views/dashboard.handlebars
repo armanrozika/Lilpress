@@ -1,0 +1,55 @@
+<body id="dashboard-page-body">
+      <h1>Welcome, Admin!</h1>
+      <div class="post-section">
+         <div class="post-section-head">
+            <a href="/newpost" target="_blank"><button  id="newpost">NEW POST +</button></a>
+            <a href="draftlist.html"><button>DRAFT LIST</button></a>
+            <a href="archive.html"  target="_blank" id="archive"><button>ARCHIVE</button></a>
+            <a href="/"  target="_blank" id="viewsite"><button>View Site</button></a>
+            <input type="text" name="" value="" placeholder="Search">
+         </div>
+         <div class="published-post-wrapper">
+            <p>Published Posts</p>
+            {{#each articles}}
+
+
+            <div class="published-post">
+               <div class="articles">
+                  <a href=""><h2>{{title}}<span>{{date}}</span>{{category}}</h2></a>
+                  <div class="update-delete">
+                     <a href="/article/edit/{{title}}" target="_blank"><button id="update" type="button" name="button">Update/Edit</button></a>
+                     <a href="#"><button data-id="{{title}}" class="delete" type="button" name="button">Delete</button></a>
+                     <a class="encodeUri" href="/article/{{title}}" target="_blank"><button id="view" type="button" name="button">View</button></a>
+                  </div>
+               </div>
+            </div>
+
+            {{/each}}
+
+         </div>
+      </div>
+      <script type="text/javascript">
+         let idSelect = document.querySelectorAll('.delete');
+         for (var j = 0; j < idSelect.length; j++) {
+            idSelect[j].dataset.id = idSelect[j].dataset.id.replace('?', '%3F');
+         }
+         for (var i = 0; i < idSelect.length; i++) {
+            idSelect[i].addEventListener('click', function(){
+               //console.log(this.dataset.id);
+               fetch("/article/"+this.dataset.id, {method: "DELETE"})
+                  .then(function(response){
+                     window.location.href = '/dashboard';
+                  })
+            })
+         }
+
+         let encode = document.querySelectorAll('.encodeUri');
+         for (var i = 0; i < encode.length; i++) {
+            encode[i].href = encode[i].href.replace('?', '%3F');
+         }
+         // encode.href = encode.href.replace('?', '%3F');
+         // console.log(encode.href)
+
+
+      </script>
+</body>

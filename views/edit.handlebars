@@ -1,0 +1,58 @@
+<body id="newpost-page-body" onload="initDoc();">
+      <div class="new-post-wrapper">
+         <form id="post-article" name="compForm" action="/article/edit/{{articles.title}}" method="POST" enctype="multipart/form-data" onsubmit="initDoc();">
+            <input id="title" type="text" name="title" value="{{articles.title}}" placeholder="Title"><br>
+            <p>Insert Image</p>
+            <div class="category-title">
+               <h2>Category</h2>
+            </div>
+            <select id="category" name="category">
+               <option value="webdev">Webdev</option>
+               <option value="javascript">Javascript</option>
+               <option value="life">Life</option>
+            </select>
+            <!-- <input id="category" type="text" name="category" value="" placeholder="Category..."> -->
+            <div id="input-populate">
+               <!-- <input class="img-upload" type="file" name="myImage" accept="image/*" multiple><br> -->
+
+            </div>
+
+            <input type="hidden" name="myDoc">
+            <div id="toolBar2">
+              <img class="intLink" title="bold" onclick="formatDoc('bold');" src="https://cdn4.iconfinder.com/data/icons/text-editor/154/bold-weight-text-format-edit-512.png">
+
+              <img class="intLink" title="italic" onclick="formatDoc('italic');" src="http://icons.iconarchive.com/icons/icons8/windows-8/512/Editing-Italic-icon.png">
+
+              <img class="intLink" title="underline" onclick="formatDoc('underline');" src="https://cdn3.iconfinder.com/data/icons/metro-design/512/underlined_font-512.png">
+
+              <img class="intLink" title="Left align" onclick="formatDoc('justifyleft');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIghI+py+0Po5y02ouz3jL4D4JMGELkGYxo+qzl4nKyXAAAOw==" />
+
+              <img class="intLink" title="Center align" onclick="formatDoc('justifycenter');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIfhI+py+0Po5y02ouz3jL4D4JOGI7kaZ5Bqn4sycVbAQA7" />
+
+              <img class="intLink" title="Right align" onclick="formatDoc('justifyright');" src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIghI+py+0Po5y02ouz3jL4D4JQGDLkGYxouqzl43JyVgAAOw==" />
+
+              <img class="intLink" title="insertorderedlist" onclick="formatDoc('insertorderedlist');" src="data:image/gif;base64,R0lGODlhFgAWAMIGAAAAADljwliE35GjuaezxtHa7P///////yH5BAEAAAcALAAAAAAWABYAAAM2eLrc/jDKSespwjoRFvggCBUBoTFBeq6QIAysQnRHaEOzyaZ07Lu9lUBnC0UGQU1K52s6n5oEADs=" />
+
+              <img class="intLink" title="Dotted list" onclick="formatDoc('insertunorderedlist');" src="data:image/gif;base64,R0lGODlhFgAWAMIGAAAAAB1ChF9vj1iE33mOrqezxv///////yH5BAEAAAcALAAAAAAWABYAAAMyeLrc/jDKSesppNhGRlBAKIZRERBbqm6YtnbfMY7lud64UwiuKnigGQliQuWOyKQykgAAOw==" />
+
+              <img class="intLink" title="Delete indentation" onclick="formatDoc('outdent');" src="data:image/gif;base64,R0lGODlhFgAWAMIHAAAAADljwliE35GjuaezxtDV3NHa7P///yH5BAEAAAcALAAAAAAWABYAAAM2eLrc/jDKCQG9F2i7u8agQgyK1z2EIBil+TWqEMxhMczsYVJ3e4ahk+sFnAgtxSQDqWw6n5cEADs=" />
+
+              <img class="intLink" title="Add indentation" onclick="formatDoc('indent');" src="data:image/gif;base64,R0lGODlhFgAWAOMIAAAAADljwl9vj1iE35GjuaezxtDV3NHa7P///////////////////////////////yH5BAEAAAgALAAAAAAWABYAAAQ7EMlJq704650B/x8gemMpgugwHJNZXodKsO5oqUOgo5KhBwWESyMQsCRDHu9VOyk5TM9zSpFSr9gsJwIAOw==" />
+
+              <img class="intLink" title="Hyperlink" onclick="var sLnk=prompt('Write the URL here','http:\/\/');if(sLnk&&sLnk!=''&&sLnk!='http://'){formatDoc('createlink',sLnk)}" src="data:image/gif;base64,R0lGODlhFgAWAOMKAB1ChDRLY19vj3mOrpGjuaezxrCztb/I19Ha7Pv8/f///////////////////////yH5BAEKAA8ALAAAAAAWABYAAARY8MlJq7046827/2BYIQVhHg9pEgVGIklyDEUBy/RlE4FQF4dCj2AQXAiJQDCWQCAEBwIioEMQBgSAFhDAGghGi9XgHAhMNoSZgJkJei33UESv2+/4vD4TAQA7" />
+
+           </div>
+           <div id="textBox" contenteditable="true" value="">{{{articles.body}}}</div>
+
+
+            <input id="input-draft" type="hidden" name="draft" value="false">
+            <input id="input-date" type="hidden" name="date" value="">
+            <button id="post-submit">POST</button>
+            <button id="draft" >DRAFT</button>
+            <a href="preview.html" target="_blank"><button id="post-preview" type="button">PREVIEW</button></a>
+
+         </form>
+      </div>
+      <script src="/main.js"></script>
+
+   </body>
