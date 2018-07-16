@@ -11,3 +11,7 @@ This is the beta version, still need some works in certain areas (eg. mobile res
 3. Finally, run the app --> $ node app.
 
 This cms has a login system already. You can login, only the logged user can edit the post. For the current version, it only supports single user. If multiple user registered, anyone logged in can edit anyone's post.
+
+
+#Note: 
+This cms uses mongodb as the database, refer to https://docs.mongodb.com/ for more info on installation
